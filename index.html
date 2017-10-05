@@ -1,0 +1,25 @@
+<script>
+        var irkutskMap;
+        ymaps.ready(function(){
+            irkutskMap = new ymaps.Map("footer_map", {
+                center: [52.282549, 104.27352], /* 52.282349, 104.27312 старые координаты */
+                zoom: 18,
+                controls: []
+            });
+            irkutskMap.controls.add('zoomControl');
+            irkutskMap.geoObjects.add(
+                new ymaps.Placemark([52.282549, 104.27352],
+            {
+                balloonContentHeader: '<div style="font-size: 14px; font-weight: 500; width: 100%; text-align: center;">Байкал Медикл</div>',
+                balloonContentBody: '<div style="font-size: 14px; width: 100%; text-align: center;">Иркутск, бульвар Гагарина, дом 44</div>',
+            },
+            {
+                preset: 'islands#dotIcon',
+                balloonMaxWidth: 300,
+                balloonTemplate: 'rarus',
+                iconColor: '#0b2a7e'
+            }))
+        });
+    </script>
+	<div id='footer_map'>
+	</div>
